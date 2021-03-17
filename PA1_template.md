@@ -1,9 +1,11 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
   html_document:
-    keep_md: true
+    keep_md: yes
+  pdf_document: default
 ---
+
 
 
 ## Loading and preprocessing the data
@@ -52,7 +54,7 @@ steps_per_day <- with(d_omit_na, aggregate(steps, by = list(date), sum))
 hist(steps_per_day$x, xlab = "Total number of steps", main = "Histogram of the total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](figures/unnamed-chunk-3-1.png)<!-- -->
 
 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -81,7 +83,7 @@ steps_avg <- aggregate(d$steps, by = list(d$interval), mean, na.rm = T)
 plot(steps_avg$Group.1, steps_avg$x, type = "l", col = "steelblue", xlab = "5-minute interval", ylab = "Average number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](figures/unnamed-chunk-5-1.png)<!-- -->
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -129,7 +131,7 @@ steps_filled_per_day <- with(d_filled, aggregate(steps, by = list(date), sum))
 hist(steps_filled_per_day$x, xlab = "Total number of steps", main = "The total number of steps taken each day after imputing missing data")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](figures/unnamed-chunk-10-1.png)<!-- -->
 
 ```r
 mean <- mean(steps_filled_per_day$x)
@@ -162,7 +164,7 @@ g + geom_line(color = "steelblue") +
               strip.text.x = element_text(size = 15, colour = "gray85"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](figures/unnamed-chunk-12-1.png)<!-- -->
 
 
 
