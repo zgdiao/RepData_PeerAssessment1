@@ -11,6 +11,8 @@ output:
 ## Loading and preprocessing the data
 
 ```r
+fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+download.file(fileUrl, destfile = "./activity.zip")
 unzip("./activity.zip")
 d <- read.csv("activity.csv", na.strings = "NA")
 names(d)
